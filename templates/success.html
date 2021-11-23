@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+.spacer {width: 100%; height: 100px;}
+
+body {font-family: "Open Sans", sans-serif;}
+
+nav {
+	width: 100%; 
+	background-color: #59ABE3; 
+	display: flex;
+	justify-content: space-between;
+}
+.logo {
+	padding: 20px; 
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+}
+nav .nav-bar {
+	padding: 20px; 
+	display: flex; 
+}
+nav .nav-bar .nav-bar_item {
+	list-style-type: none;
+	padding: 0px 20px;
+}
+nav .nav-bar .dropdown {
+	position: relative;
+}
+nav .nav-bar .dropdown:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 5px;
+	width: 7px;
+	height: 7px;
+	cursor: pointer;
+	transform: rotate(-45deg);
+	border-left: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	transition: 0.2s ease-in-out;
+}
+nav .nav-bar .dropdown:hover:after{
+	transform: rotate(135deg);
+}
+nav .nav-bar .dropdown .project {
+	position: absolute;
+	transform: translateX(-20px) translateY(5px);
+	width: 110px;
+	background-color: #e53f30;
+	padding: 20px;
+	border-radius: 10px;
+	height: 0px;
+	overflow: hidden;
+	visibility: hidden;
+	transition: 0.2s ease-in-out;
+}
+nav .nav-bar .dropdown:hover .project{
+	height: 220px;
+	
+	visibility: visible;
+}
+
+nav .nav-bar .dropdown .project .drop-item {
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+nav .nav-bar .nav-bar_item a {
+	position: relative;
+	display; block; 
+	padding-bottom: 5px;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+}
+nav .nav-bar .nav-bar_item a:after {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	transition: 0.1s ease-in-out;
+}
+nav .nav-bar .nav-bar_item a:hover:after {
+	width: 100%;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+  text-align: center;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+  text-align: center;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 10px 10px 10px 10px;
+}
+
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+<nav>
+	<a class="logo" href="#">AI- Dynamic Resource</a>
+	<ul class="nav-bar">
+		<li class="nav-bar_item"><a href="">home</a></li>
+		<li class="nav-bar_item"><a href="">about</a></li>
+		<li class="nav-bar_item"><a href="">services</a></li>
+        <li class="nav-bar_item dropdown">
+			<a href="#">Site</a>
+			<ul class="project">
+				<li class="drop-item"><a href="">Site 1</a></li>
+				<li class="drop-item"><a href="">Site 2</a></li>
+				<li class="drop-item"><a href="">Site 3</a></li>
+				<li class="drop-item"><a href="">Site 4</a></li>
+				<li class="drop-item"><a href="">Site 5</a></li>
+				<li class="drop-item"><a href="">Site 6</a></li>
+			</ul>
+		</li>
+		
+		<li class="nav-bar_item"><a href="">contact</a></li>
+        
+	</ul>
+</nav>
+
+
+
+<!-- =============== Tableau ====================-->
+
+<div class='center'>
+<div class='tableauPlaceholder' id='viz1637652072343' style='position: relative'><noscript><a href='#'><img alt='site_data ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ta&#47;tableau_site_21&#47;site_data&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='tableau_site_21&#47;site_data' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ta&#47;tableau_site_21&#47;site_data&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1637652072343');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+</div>
+
+<!-- =============== footer ====================-->
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>Robi Corporate Office, 53 Gulshan South Avenue, Gulshan-1, Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>9876543210 0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>dynamicresourcedsp@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+           
+    
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2021, All Right Reserved <a href="http://dynamicresources.info/index.php/home/about_us">Dynamic Resouce</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
